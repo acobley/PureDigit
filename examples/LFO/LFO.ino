@@ -98,7 +98,7 @@ void setShape() {
   float Percent=an2/newRange2;
   float Percent2=1.0-Percent;
   float t=0.02*(an1/100);
-  DisplayNumCycles=(int)(5/t);
+  DisplayNumCycles=(int)(5/t); //Number of cycles to wait before entering "Preator" display mode
 
   Step1 = twoPi / (an1*Percent);
   Step2 = twoPi/(an1*Percent2);
@@ -158,6 +158,7 @@ void loop() {
     displayDelay++;
     if (displayDelay>DisplayNumCycles){
        digit.displayRandom();
+       displayDelay=DisplayNumCycles;
     }
   }
 
